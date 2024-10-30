@@ -1,0 +1,148 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c4e2c4;
+    /* Cor de fundo suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 428px;
+    /* Largura máxima para dispositivos móveis */
+    height: 926px;
+    /* Altura máxima para dispositivos móveis */
+    overflow: hidden;
+}
+
+.page {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* Para posicionar o footer */
+}
+
+.page.active {
+    display: flex;
+}
+
+.header {
+    background-color: #008000;
+    /* Cor verde escura */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 24px;
+}
+
+.page-title {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.content {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+    /* Adiciona barra de rolagem se o conteúdo for muito grande */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #008000;
+    /* Cor verde escura */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.options button {
+    margin-bottom: 10px;
+    width: 48%;
+}
+
+.comunicados {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.recursos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.recurso {
+    width: 48%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    /* Para que a imagem não ultrapasse o container */
+}
+
+.recurso img {
+    width: 100%;
+    height: 150px;
+    /* Altura fixa para a imagem */
+    object-fit: cover;
+    /* Para que a imagem cubra toda a área, mesmo que fique distorcida */
+}
+
+.recurso h3 {
+    padding: 10px;
+}
+
+.calendario {
+    margin-bottom: 10px;
+}
+
+.grid-calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 2px;
+}
+
+.grid-calendario>div {
+    background-color: lightgray;
+    height: 30px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #eee;
+    padding: 10px;
+    text-align: center;
+}

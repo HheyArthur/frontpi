@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VillasApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="page" id="loginPage">
+            <div class="header">
+                <h1>VillasApp</h1>
+            </div>
+            <div class="content">
+                <label for="login">Login:</label>
+                <input type="text" id="login">
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha">
+
+                <button onclick="login()">Entrar</button>
+            </div>
+        </div>
+
+@
+
+        <div class="page" id="homePage">
+            <div class="header">
+                <h1>VillasApp</h1>
+                <span class="page-title">Home</span>
+            </div>
+            <div class="content">
+                <h2>Mural</h2>
+                <div class="comunicados" id="comunicados">
+                </div>
+                <h2>Descubra</h2>
+                <div class="options">
+                    <button onclick="changePage('muralPage')">Mural</button>
+                    <button onclick="changePage('reservasPage')">Reservas</button>
+                    <button>Outros</button>
+                    <button>Outros</button>
+                    <button>Outros</button>
+                    <button>Outros</button>
+                </div>
+            </div>
+            <div class="footer">
+                <img src="home.png" alt="Home">
+            </div>
+        </div>
+
+        <div class="page" id="muralPage">
+            <div class="header">
+                <h1>VillasApp</h1>
+                <span class="page-title">Mural</span>
+            </div>
+            <div class="content">
+                <h2>Mural</h2>
+                <div class="comunicados">
+                </div>
+            </div>
+            <div class="footer">
+                <img src="home.png" alt="Home">
+            </div>
+        </div>
+
+        <div class="page" id="reservasPage">
+            <div class="header">
+                <h1>VillasApp</h1>
+                <span class="page-title">Reservas</span>
+            </div>
+            <div class="content">
+                <h2>Reserva de Recursos</h2>
+                <div class="recursos">
+                    <div class="recurso" data-recurso="Piscina">
+                        <img src="piscina.jpg" alt="Piscina">
+                        <h3>Piscina</h3>
+                    </div>
+                    <div class="recurso" data-recurso="Churrasqueira">
+                        <img src="churrasqueira.jpg" alt="Churrasqueira">
+                        <h3>Churrasqueira</h3>
+                    </div>
+                    <div class="recurso" data-recurso="Quadra">
+                        <img src="quadra.jpg" alt="Quadra">
+                        <h3>Quadra</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <img src="home.png" alt="Home">
+            </div>
+        </div>
+
+        <div class="page" id="agendamentoPage">
+            <div class="header">
+                <h1>VillasApp</h1>
+                <span class="page-title">Reservas</span>
+            </div>
+            <div class="content">
+                <h2 id="recursoNome">Nome do recurso</h2>
+                <h3>Agendar Reserva</h3>
+                <div class="calendario">
+                    <h4>MÊS</h4>
+                    <div class="grid-calendario">
+                    </div>
+                </div>
+                <button onclick="adicionarReserva()">Adicionar Reservar</button>
+            </div>
+            <div class="footer">
+                <img src="home.png" alt="Home">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
