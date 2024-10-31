@@ -1,21 +1,80 @@
-const pages = document.querySelectorAll('.page');
-let currentPage = 'loginPage'; // Página inicial
+// Variáveis globais
+let recursoSelecionado;
+let calendar;
 
-function changePage(pageId) {
-    document.getElementById(currentPage).classList.remove('active');
-    document.getElementById(pageId).classList.add('active');
-    currentPage = pageId;
-
-    if (pageId === 'agendamentoPage') {
-        const recursoSelecionado = document.querySelector('.recurso.selected');
-        if (recursoSelecionado) {
-            document.getElementById('recursoNome').innerText = recursoSelecionado.dataset.recurso;
+// Configuração do calendário após o DOM estar totalmente carregado
+document.addEventListener('DOMContentLoaded', function() {
+    const calendarioEl = document.getElementById('calendario');
+    
+    // Inicializa o calendário usando FullCalendar
+    calendar = new FullCalendar.Calendar(calendarioEl, {
+        initialView: 'dayGridMonth',
+        headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        events: [],  // Aqui você pode adicionar eventos iniciais, se houver
+        dateClick: function(info) {
+            alert(`Você selecionou o dia ${info.dateStr}`);
+        },
+        eventClick: function(info) {
+            alert(`Evento: ${info.event.title}`);
         }
-    }
+    });
+
+    // Renderiza o calendário na tela
+    calendar.render();
+});
+
+// Função para selecionar um recurso e mudar para a página de agendamento
+function selectRecurso(recurso) {
+    recursoSelecionado = recurso;
+    document.getElementById('recursoNome').textContent = `Agendando: ${recurso}`;
+    changePage('agendamentoPage');
 }
 
+// Função para adicionar uma reserva ao calendário
+function adicionarReserva() {
+    if (!calendar) {
+        alert("Calendário ainda não carregado. Tente novamente.");
+        return;
+    }
+
+    // Nome do evento com o recurso selecionado
+    const eventName = `Reserva para ${recursoSelecionado}`;
+    const selectedDate = calendar.getDate();
+    const eventDate = selectedDate.toISOString().split('T')[0];
+
+    // Adiciona o evento ao calendário
+    calendar.addEvent({
+        title: eventName,
+        start: eventDate,
+        allDay: true
+    });
+
+    alert(`Reserva para o recurso ${recursoSelecionado} foi adicionada no dia ${eventDate}!`);
+
+    // Retorna para a página inicial
+    goToHome();
+}
+
+// Função para alternar entre as páginas
+function changePage(pageId) {
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => {
+        page.style.display = 'none'; // Oculta todas as páginas
+    });
+    document.getElementById(pageId).style.display = 'block'; // Mostra a página desejada
+}
+
+// Função para ir à página inicial
+function goToHome() {
+    changePage('homePage');
+}
+
+// Função de login simulada
 function login() {
-    // Simulando login
     const login = document.getElementById('login').value;
     const senha = document.getElementById('senha').value;
 
@@ -26,54 +85,5 @@ function login() {
     }
 }
 
-// Simulando comunicados
-const comunicados = [
-    'Novo comunicado 1',
-    'Comunicado referente conta',
-    'Novo comunicado 3',
-    'Comunicado referente conta',
-    'Novo comunicado 5',
-    'Comunicado referente conta'
-];
-
-const comunicadosContainer = document.querySelectorAll('.comunicados');
-comunicadosContainer.forEach(container => {
-    comunicados.forEach(comunicado => {
-        const comunicadoElement = document.createElement('div');
-        comunicadoElement.innerText = comunicado;
-        container.appendChild(comunicadoElement);
-    });
-});
-
-// Simulando calendário
-const gridCalendario = document.querySelector('.grid-calendario');
-for (let i = 1; i <= 35; i++) {
-    const dia = document.createElement('div');
-    gridCalendario.appendChild(dia);
-}
-
-// Simulando reserva
-const recursos = document.querySelectorAll('.recurso');
-recursos.forEach(recurso => {
-    recurso.addEventListener('click', () => {
-        // Remove a classe 'selected' de qualquer outro recurso
-        const recursoSelecionado = document.querySelector('.recurso.selected');
-        if (recursoSelecionado) {
-            recursoSelecionado.classList.remove('selected');
-        }
-
-        // Adiciona a classe 'selected' ao recurso clicado
-        recurso.classList.add('selected');
-
-        changePage('agendamentoPage');
-    });
-});
-
-function adicionarReserva() {
-    // Implemente a lógica para adicionar a reserva aqui
-    alert('Reserva adicionada com sucesso!');
-    changePage('homePage');
-}
-
-// Inicializa a página
-changePage(currentPage);
+// Inicializa na página de login
+changePage('loginPage');
