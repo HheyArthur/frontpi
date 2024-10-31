@@ -1,0 +1,123 @@
+body {
+    font-family: sans-serif;
+    background-color: #a7d1ab;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Para ocupar toda a altura da tela */
+    min-height: 100vh; /* Garante que o conteúdo ocupe pelo menos a altura da tela */
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que o conteúdo principal cresça para preencher o espaço disponível */
+ width: 90%; /* Completa a barra */
+ max-width: 400px;
+    margin: 0 auto;
+    background-color: #e0ddd5;
+    box-sizing: border-box;
+}
+
+
+.header {
+    background-color: #1a5f38;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+main {
+    flex-grow: 1; /* Permite que a seção principal cresça */
+    padding: 20px;
+    overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo for maior que a tela */
+}
+
+
+.mural h2, .descubra h2 {
+    color: #1a5f38;
+}
+
+.comunicados {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.descubra {
+    margin-top: 80px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Três colunas em telas maiores */
+    gap: 20px; /* Mais espaço entre os círculos */
+    justify-content: center; /* Centraliza os círculos horizontalmente */
+}
+
+.circle-button {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o texto vertical e horizontalmente */
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%;
+    background-color: #4CAF50;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 14px; /* Tamanho da fonte menor para caber melhor */
+    text-align: center; /* Centraliza o texto */
+    line-height: 1.2; /* Ajusta o espaçamento entre linhas do texto */
+    box-sizing: border-box; /* Inclui o padding no cálculo da largura e altura */
+    padding: 5px; /* Adiciona um pequeno padding */
+}
+
+.circle-button span {
+    display: inline-block; /* Permite que o texto seja centralizado verticalmente */
+    vertical-align: middle; /* Centraliza o texto verticalmente */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 428px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas em telas menores */
+    }
+
+    .circle-button {
+      width: 70px; /* Tamanho menor em telas pequenas */
+      height: 70px; /* Tamanho menor em telas pequenas */
+      font-size: 12px; /* Fonte menor em telas pequenas */
+    }
+}
+
+
+.footer {
+    background-color: #a7d1ab;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer i {
+    font-size: 24px;
+    color: #1a5f38;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 428px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas em telas menores */
+    }
+}
