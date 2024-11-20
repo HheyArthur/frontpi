@@ -12,13 +12,12 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1; /* Permite que o conteúdo principal cresça para preencher o espaço disponível */
- width: 90%; /* Completa a barra */
- max-width: 400px;
+    width: 90%; /* Completa a barra */
+    max-width: 400px;
     margin: 0 auto;
     background-color: #e0ddd5;
     box-sizing: border-box;
 }
-
 
 .header {
     background-color: #1a5f38;
@@ -27,14 +26,11 @@ body {
     text-align: center;
 }
 
-
-
 main {
     flex-grow: 1; /* Permite que a seção principal cresça */
     padding: 20px;
     overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo for maior que a tela */
 }
-
 
 .mural h2, .descubra h2 {
     color: #1a5f38;
@@ -100,7 +96,6 @@ main {
     }
 }
 
-
 .footer {
     background-color: #a7d1ab;
     padding: 10px;
@@ -113,6 +108,10 @@ main {
 .footer i {
     font-size: 24px;
     color: #1a5f38;
+}
+
+.footer a {
+    text-decoration: none;
 }
 
 /* Responsividade para telas menores */

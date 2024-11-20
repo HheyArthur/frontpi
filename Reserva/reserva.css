@@ -1,4 +1,4 @@
-/* Estilos gerais (semelhantes aos anteriores) */
+/* Estilos gerais */
 body {
     font-family: sans-serif;
     background-color: #a7d1ab;
@@ -12,9 +12,11 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    max-width: 428px;
+    width: 90%; /* Completa a barra */
+    max-width: 400px;
     margin: 0 auto;
     background-color: #e0ddd5;
+    box-sizing: border-box;
 }
 
 .header {

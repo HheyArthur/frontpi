@@ -1,67 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página em Construção</title>
-    <style>
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
-        
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f2f2f2;
-            font-family: Arial, sans-serif;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            padding: 20px;
-            border: 1px solid #ddd;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            font-size: 2em;
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
-        .icon {
-            font-size: 4em;
-            color: #ffa500;
-        }
-        .footer {
-            margin-top: 20px;
-        }
-        .footer a {
-            text-decoration: none;
-            color: #333;
-            font-size: 1.5em;
-            display: flex;
-            align-items: center;
-        }
-        .footer a:hover {
-            color: #ffa500;
-        }
-    </style>
+    <title>VilasApp - Visitantes</title>
+    <link rel="stylesheet" href="visitantes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 </head>
 <body>
+    <div class="container">
+        <header class="header">
+            <h1>VilasApp</h1>
+        </header>
 
-<div class="container">
-    <div class="icon">🚧</div>
-    <h1>Página em Construção</h1>
-    <p>Estamos trabalhando para trazer essa página em breve!</p>
-</div>
+        <main>
+            <section class="visitantes">
+                <h2>Visitantes</h2>
+                <button id="addVisitanteButton" class="add-button">
+                    <i class="fas fa-plus"></i> Cadastrar Visitante
+                </button>
 
-<footer class="footer">
-    <a href="../Home/home.html"><i class="fas fa-home"></i> Voltar para a Home</a>
-</footer>
+                <!-- Lista de Visitantes -->
+                <div id="visitantesLista" class="visitantes-lista">
+                    <h3>Lista de Visitantes</h3>
+                    <ul id="visitantesContainer">
+                        <!-- Lista de visitantes será preenchida dinamicamente -->
+                    </ul>
+                </div>
+            </section>
+        </main>
 
+        <footer class="footer">
+            <a href="../Home/home.html"><i class="fas fa-home"></i></a>
+        </footer>
+    </div>
+    <script src="visitantes.js"></script>
 </body>
 </html>

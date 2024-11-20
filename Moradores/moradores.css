@@ -32,16 +32,16 @@ main {
     overflow-y: auto;
 }
 
-.mural h2 {
+.moradores h2 {
     color: #1a5f38;
     text-align: center;
     margin-bottom: 10px;
 }
 
-.add-button {
+.action-button {
     background-color: #4CAF50;
     color: white;
-    padding: 8px 12px;
+    padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -53,21 +53,31 @@ main {
     box-sizing: border-box;
 }
 
-.add-button i {
+.action-button i {
     margin-right: 5px;
 }
 
-.comunicados {
+.moradores-lista {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
-.card {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px;
+.morador-card {
     border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background-color: white;
+}
+
+.morador-card h3 {
+    margin: 0;
+    color: #4CAF50;
+}
+
+.morador-card p {
+    margin: 5px 0;
 }
 
 .footer {
@@ -79,11 +89,20 @@ main {
     align-items: center;
 }
 
-.footer i {
-    font-size: 24px;
-    color: #1a5f38;
-}
-
 .footer a {
     text-decoration: none;
+    color: #1a5f38;
+    font-size: 16px;
+}
+
+.delete-button {
+    background-color: #f44336; /* Cor vermelha para o botão de deletar */
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
 }

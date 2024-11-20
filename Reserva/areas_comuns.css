@@ -12,11 +12,9 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    width: 90%; /* Completa a barra */
-    max-width: 400px;
+    max-width: 428px;
     margin: 0 auto;
     background-color: #e0ddd5;
-    box-sizing: border-box;
 }
 
 .header {
@@ -32,42 +30,33 @@ main {
     overflow-y: auto;
 }
 
-.mural h2 {
-    color: #1a5f38;
-    text-align: center;
-    margin-bottom: 10px;
+.form-group {
+    margin-bottom: 15px;
 }
 
-.add-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #1a5f38;
+}
+
+.form-group input {
     width: 100%;
-    justify-content: center;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     box-sizing: border-box;
 }
 
-.add-button i {
-    margin-right: 5px;
-}
-
-.comunicados {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.card {
+.submit-button {
     background-color: #4CAF50;
     color: white;
-    padding: 15px;
-    border-radius: 8px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .footer {
@@ -79,11 +68,8 @@ main {
     align-items: center;
 }
 
-.footer i {
-    font-size: 24px;
-    color: #1a5f38;
-}
-
 .footer a {
     text-decoration: none;
+    color: #1a5f38;
+    font-size: 16px;
 }

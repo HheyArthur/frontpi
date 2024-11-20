@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VilasApp - Cadastro de Visitantes</title>
+    <link rel="stylesheet" href="criarVisitante.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>VilasApp</h1>
+        </header>
+
+        <main>
+            <h2>Cadastrar Visitante</h2>
+            <form id="cadastroForm" novalidate>
+                <div class="campo">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Digite o nome">
+                </div>
+                <div class="campo">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" name="cpf" required maxlength="11" placeholder="Apenas números">
+                </div>
+                <div class="campo">
+                    <label for="placa">Placa do Veículo:</label>
+                    <input type="text" id="placa" name="placa" maxlength="7" placeholder="Apenas letras e números">
+                </div>
+                <div class="campo">
+                    <label for="dataEntrada">Data de Entrada:</label>
+                    <input type="date" id="dataEntrada" name="dataEntrada" required>
+                </div>
+                <div class="campo">
+                    <label for="dataSaida">Data de Saída:</label>
+                    <input type="date" id="dataSaida" name="dataSaida">
+                </div>
+                <div class="campo">
+                    <label for="telefone">Telefone:</label>
+                    <input type="text" id="telefone" name="telefone" maxlength="11" placeholder="Apenas números">
+                </div>
+                <button type="submit" class="botao">Cadastrar</button>
+            </form>
+        </main>
+
+        <footer class="footer">
+            <a href="visitantes.html"><i class="fas fa-arrow-left"></i> Voltar</a>
+        </footer>
+    </div>
+    <script src="criarVisitante.js"></script>
+</body>
+</html>
