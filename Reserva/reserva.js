@@ -1,6 +1,6 @@
 const recursosContainer = document.getElementById('recursosContainer');
 const addRecursoButton = document.getElementById('addRecursoButton');
-const apiUrl = 'http://127.0.0.1:8000'; // Substitua 'Apiaqui' pela URL da sua API
+const apiUrl = 'http://127.0.0.1:8000'; 
 
 // Redireciona para a tela de cadastro de áreas comuns
 addRecursoButton.addEventListener('click', () => {

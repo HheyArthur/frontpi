@@ -32,16 +32,16 @@ main {
     overflow-y: auto;
 }
 
-.visitantes h2 {
+.reservas h2 {
     color: #1a5f38;
     text-align: center;
     margin-bottom: 10px;
 }
 
-.action-button {
+.add-button {
     background-color: #4CAF50;
     color: white;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -53,11 +53,12 @@ main {
     box-sizing: border-box;
 }
 
-.action-button i {
+.add-button i {
     margin-right: 5px;
 }
 
-.visitantes-lista {
+/* Estilos específicos para os cards de reservas */
+.reservas-lista {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -65,22 +66,22 @@ main {
 
 .card {
     border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Para que a imagem não ultrapasse o card */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.card h3 {
     padding: 10px;
-    background-color: white;
-    
+    margin: 0;
+    background-color: #4CAF50;
+    color: white;
 }
 
-.card-header {
-    font-weight: bold;
-    color: #4CAF50;
-    margin-bottom: 10px;
-}
-
-.card-content p {
-    margin: 5px 0;
-    
+.card p {
+    padding: 10px;
+    margin: 0;
+    background-color: #fff;
+    color: #333;
 }
 
 .footer {
@@ -92,12 +93,11 @@ main {
     align-items: center;
 }
 
-.footer a {
-    text-decoration: none;
+.footer i {
+    font-size: 24px;
     color: #1a5f38;
-    font-size: 16px;
 }
 
-.card h3 {
-    color: #4CAF50;
+.footer a {
+    text-decoration: none;
 }

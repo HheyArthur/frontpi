@@ -68,3 +68,11 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
         alert('Erro ao cadastrar morador. Verifique o console para mais detalhes.');
     }
 });
+
+document.getElementById('cpf').addEventListener('input', function(event) {
+    let value = event.target.value.replace(/\D/g, '');
+    if (value.length > 11) {
+        value = value.slice(0, 11);
+    }
+    event.target.value = value;
+});
