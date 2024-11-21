@@ -18,8 +18,13 @@ function validateTelefone(telefone) {
 
 // Função para validar CPF (apenas números)
 function validateCPF(cpf) {
-    const re = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
+    const re = /^\d{11}$/;
     return re.test(cpf);
+}
+
+// Função para remover a máscara do CPF
+function removeMascaraCPF(cpf) {
+    return cpf.replace(/\D/g, '');
 }
 
 // Máscara para o campo de telefone
@@ -47,6 +52,18 @@ document.getElementById('cpf')?.addEventListener('input', function(event) {
 
 // Máscara para o campo de CPF do Morador na tela de agendar reserva
 document.getElementById('cpfMorador')?.addEventListener('input', function(event) {
+    let value = event.target.value.replace(/\D/g, '');
+    if (value.length > 11) {
+        value = value.slice(0, 11);
+    }
+    value = value.replace(/(\d{3})(\d)/, '$1.$2');
+    value = value.replace(/(\d{3})(\d)/, '$1.$2');
+    value = value.replace(/(\d{3})(\d{2})$/, '$1-$2');
+    event.target.value = value;
+});
+
+// Máscara para o campo de CPF do Autor na tela de cadastro de recado
+document.getElementById('cpfAutor')?.addEventListener('input', function(event) {
     let value = event.target.value.replace(/\D/g, '');
     if (value.length > 11) {
         value = value.slice(0, 11);

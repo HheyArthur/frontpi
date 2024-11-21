@@ -49,6 +49,11 @@ main {
     border-radius: 8px;
 }
 
+.break-line {
+    white-space: pre-wrap; /* Garante que o texto quebre a linha e preserve espaços em branco */
+    word-wrap: break-word; /* Garante que o texto quebre a linha corretamente */
+}
+
 .descubra {
     margin-top: 80px;
 }
@@ -69,7 +74,7 @@ main {
     border-radius: 50%;
     background-color: #4CAF50;
     text-decoration: none;
-    color: black;
+    color: rgb(231, 230, 230);
     font-weight: bold;
     font-size: 14px; /* Tamanho da fonte menor para caber melhor */
     text-align: center; /* Centraliza o texto */
@@ -119,4 +124,16 @@ main {
     .grid-container {
         grid-template-columns: repeat(2, 1fr); /* Duas colunas em telas menores */
     }
+}
+
+.reserve-button {
+    background-color: #f44336; /* Cor vermelha para o botão de reservar */
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
 }

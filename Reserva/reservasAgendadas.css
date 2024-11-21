@@ -57,8 +57,8 @@ main {
     margin-right: 5px;
 }
 
-/* Estilos específicos para os cards de recursos */
-.recursos {
+/* Estilos específicos para os cards de reservas */
+.reservas-lista {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -70,17 +70,18 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
-.card img {
-    width: 100%;
-    height: 200px; /* Altura fixa para a imagem */
-    object-fit: cover; /* Para a imagem cobrir toda a área */
-}
-
 .card h3 {
     padding: 10px;
     margin: 0;
     background-color: #4CAF50;
     color: white;
+}
+
+.card p {
+    padding: 10px;
+    margin: 0;
+    background-color: #fff;
+    color: #333;
 }
 
 .footer {
@@ -101,45 +102,9 @@ main {
     text-decoration: none;
 }
 
-/* Estilos para o modal de reserva */
-.modal {
-    display: none; /* Escondido por padrão */
-    position: fixed; /* Fixo na tela */
-    z-index: 1; /* Fica acima de outros elementos */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Habilita rolagem se necessário */
-    background-color: rgb(0,0,0); /* Fallback */
-    background-color: rgba(0,0,0,0.4); /* Preto com opacidade */
-}
 
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% do topo e centralizado */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Largura do modal */
-}
-
-.close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-.reserve-button {
-    background-color: #4CAF50; /* Cor vermelha para o botão de reservar */
+.delete-button {
+    background-color: #f44336; /* Cor vermelha para o botão de deletar */
     color: white;
     padding: 8px 12px;
     border: none;
@@ -149,4 +114,3 @@ main {
     width: 100%;
     box-sizing: border-box;
 }
-

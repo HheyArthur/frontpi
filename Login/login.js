@@ -1,16 +1,33 @@
 const form = document.getElementById('loginForm');
 const errorMessage = document.getElementById('errorMessage');
 
-form.addEventListener('submit', function(event) {
+form.addEventListener('submit', async function(event) {
     event.preventDefault();
 
-    const login = document.getElementById('login').value;
+    const email = document.getElementById('login').value;
     const senha = document.getElementById('senha').value;
 
-    if (login === "admin" && senha === "321") {
+    const loginData = {
+        email: email,
+        senha: senha
+    };
+
+    try {
+        const response = await fetch('http://127.0.0.1:8000/moradores/login/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(loginData),
+        });
+
+        if (!response.ok) {
+            throw new Error('Usuário ou senha incorretos.');
+        }
+
         window.location.href = "../Home/home.html"; 
-    } else {
+    } catch (error) {
         errorMessage.style.display = "block";
-        errorMessage.textContent = "Usuário ou senha incorretos.";
+        errorMessage.textContent = error.message;
     }
-}); 
+});

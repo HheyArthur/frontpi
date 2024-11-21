@@ -9,11 +9,11 @@
 <body>
     <div class="container">
         <header class="header">
-            <h1>VilasApp</h1>
-            <h2>Agendar Reserva</h2>
+            <img src="../assets/logo.png" style="width: 100%;" alt="logoVilasApp">
         </header>
-
+        
         <main>
+            <h2>Agendar Reserva</h2>
             <form id="agendarReservaForm">
                 <div class="form-group">
                     <label for="cpfMorador">CPF do Morador:</label>
@@ -27,15 +27,12 @@
                     <label for="areaReserva">Área Reservada:</label>
                     <input type="text" id="areaReserva" name="areaReserva" required placeholder="Digite a área reservada">
                 </div>
-                <div class="form-group">
-                    <label for="reservadoPor">Reservado por:</label>
-                    <input type="text" id="reservadoPor" name="reservadoPor" required placeholder="Digite o nome do responsável">
-                </div>
+                
                 <button type="submit" class="submit-button">Confirmar Reserva</button>
             </form>
         </main>
 
-        <footer class="footer">
+        <footer class="footer" style="text-align: center; padding: 10px; background-color: #a7d1ab;">
             <a href="reserva.html"><i class="fas fa-home"></i> Voltar para Áreas Comuns</a>
         </footer>
     </div>

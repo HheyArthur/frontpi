@@ -10,28 +10,25 @@
 <body>
     <div class="container">
         <header class="header">
-            <h1>VilasApp</h1>
+            <img src="../assets/logo.png" style="width: 100%;" alt="logoVilasApp">
         </header>
 
-        <main>
-            <section class="visitantes">
-                <h2>Visitantes</h2>
-                <button id="addVisitanteButton" class="add-button">
-                    <i class="fas fa-plus"></i> Cadastrar Visitante
-                </button>
+        <main class="visitantes">
+            <h2>Visitantes</h2>
+            <button id="addVisitanteButton" class="action-button">
+                <i class="fas fa-user-plus"></i> Cadastrar Visitante
+            </button>
+            <button id="listarVisitantesButton" class="action-button">
+                <i class="fas fa-list"></i> Listar Visitantes
+            </button>
 
-                <!-- Lista de Visitantes -->
-                <div id="visitantesLista" class="visitantes-lista">
-                    <h3>Lista de Visitantes</h3>
-                    <ul id="visitantesContainer">
-                        <!-- Lista de visitantes será preenchida dinamicamente -->
-                    </ul>
-                </div>
-            </section>
+            <div id="visitantesContainer" class="visitantes-lista">
+                <!-- Lista de visitantes será preenchida dinamicamente -->
+            </div>
         </main>
 
         <footer class="footer">
-            <a href="../Home/home.html"><i class="fas fa-home"></i></a>
+            <a href="../Home/home.html"><i class="fas fa-home"></i> Voltar para Home</a>
         </footer>
     </div>
     <script src="visitantes.js"></script>

@@ -1,3 +1,4 @@
+/* Estilos gerais */
 body {
     font-family: sans-serif;
     background-color: #a7d1ab;
@@ -5,20 +6,17 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    justify-content: center; /* Centraliza o conteúdo verticalmente */
-    align-items: center;     /* Centraliza o conteúdo horizontalmente */
 }
 
 .container {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    width: 90%;
+    width: 90%; /* Completa a barra */
     max-width: 400px;
+    margin: 0 auto;
     background-color: #e0ddd5;
     box-sizing: border-box;
-    padding: 20px; /* Adiciona espaçamento interno */
-    border-radius: 8px; /* Deixa a caixa mais suave */
 }
 
 .header {
@@ -40,10 +38,10 @@ main {
     margin-bottom: 10px;
 }
 
-.add-button {
+.action-button {
     background-color: #4CAF50;
     color: white;
-    padding: 8px 12px;
+    padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -55,7 +53,7 @@ main {
     box-sizing: border-box;
 }
 
-.add-button i {
+.action-button i {
     margin-right: 5px;
 }
 
@@ -69,8 +67,9 @@ main {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+    padding: 10px;
     background-color: white;
+    
 }
 
 .card-header {
@@ -81,10 +80,7 @@ main {
 
 .card-content p {
     margin: 5px 0;
-}
-
-.card-content .label {
-    font-weight: bold;
+    
 }
 
 .footer {
@@ -100,4 +96,8 @@ main {
     text-decoration: none;
     color: #1a5f38;
     font-size: 16px;
+}
+
+.card h3 {
+    color: #4CAF50;
 }

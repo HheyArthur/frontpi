@@ -1,17 +1,37 @@
-const form = document.getElementById('loginForm');
-const errorMessage = document.getElementById('errorMessage');
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        const response = await fetch('http://127.0.0.1:8000/recados/listar/', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
+        if (!response.ok) {
+            throw new Error(`Erro HTTP! Status: ${response.status}`);
+        }
 
-    const login = document.getElementById('login').value;
-    const senha = document.getElementById('senha').value;
+        const recados = await response.json();
+        const comunicadosContainer = document.querySelector('.comunicados');
+        comunicadosContainer.innerHTML = ''; // Limpa a lista antes de adicionar os novos itens
 
-    if (login === "admin" && senha === "321") {
-        window.location.href = "../Home/home.html";
+        // Pega os dois recados mais recentes
+        const recadosRecentes = recados.slice(-2);
 
-    } else {
-        errorMessage.style.display = "block";
-        errorMessage.textContent = "Usuário ou senha incorretos.";
+        recadosRecentes.forEach(recado => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            card.innerHTML = `
+                <h3>Recado</h3>
+                <p class="break-line">${recado.conteudo}</p> 
+                <p>Autor: ${recado.nome_autor}</p>
+            `;
+
+            comunicadosContainer.appendChild(card);
+        });
+    } catch (error) {
+        console.error('Erro ao listar recados:', error);
+        alert('Erro ao listar recados. Verifique o console para mais detalhes.');
     }
-}); 
+});

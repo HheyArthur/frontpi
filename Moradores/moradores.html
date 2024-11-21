@@ -8,28 +8,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="display: flex; flex-direction: column; min-height: 100vh;">
         <header class="header">
-            <h1>VilasApp</h1>
+            <img src="../assets/logo.png" style="width: 100%;" alt="logoVilasApp">
         </header>
 
-        <main class="moradores">
-            <h2>Moradores</h2>
-            <button id="cadastrarMoradorButton" class="action-button">
-                <i class="fas fa-user-plus"></i> Cadastrar Morador
-            </button>
-            <button id="listarMoradoresButton" class="action-button">
-                <i class="fas fa-list"></i> Listar Moradores
-            </button>
+        <main class="moradores" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h2>Moradores</h2>
+                <button id="cadastrarMoradorButton" class="action-button">
+                    <i class="fas fa-user-plus"></i> Cadastrar Morador
+                </button>
+                <button id="listarMoradoresButton" class="action-button">
+                    <i class="fas fa-list"></i> Listar Moradores
+                </button>
 
-            <div id="moradoresContainer" class="moradores-lista">
-                <!-- Lista de moradores será adicionada aqui -->
+                <div id="moradoresContainer" class="moradores-lista">
+                    <!-- Lista de moradores será adicionada aqui -->
+                </div>
             </div>
-        </main>
 
-        <footer class="footer">
-            <a href="../Home/home.html"><i class="fas fa-home"></i> Voltar para Home</a>
-        </footer>
+            <footer class="footer" style="text-align: center; padding: 10px; background-color: #a7d1ab;">
+                <a href="../Home/home.html"><i class="fas fa-home"></i> Voltar para Home</a>
+            </footer>
+        </main>
     </div>
 
     <script src="moradores.js"></script>

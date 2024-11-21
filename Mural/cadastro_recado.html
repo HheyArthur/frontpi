@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Recado</title>
+    <link rel="stylesheet" href="cadastro_recado.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="../assets/logo.png" style="width: 100%;" alt="logoVilasApp">
+        </header>
+
+        <main style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+            <h1>Cadastro de Recado</h1>
+            <form id="recadoForm" style="flex-grow: 1;">
+                <div class="form-group">
+                    <label for="conteudo">Conteúdo:</label>
+                    <textarea id="conteudo" name="conteudo" maxlength="300" required></textarea>
+                    <div id="charCount">0/300</div>
+                </div>
+                <div class="form-group">
+                    <label for="cpfAutor">CPF do Autor:</label>
+                    <input type="text" id="cpfAutor" name="cpfAutor" required>
+                </div>
+                <button type="submit" class="submit-button">Enviar</button>
+            </form>
+
+            <footer class="footer" style="text-align: center; padding: 10px; background-color: #a7d1ab;">
+                <a href="mural.html"><i class="fas fa-arrow-left"></i> Voltar</a>
+            </footer>
+        </main>
+    </div>
+
+    
+    <script src="cadastro_recado.js"></script>
+    <script src="../Validações de campos/validacao.js"></script>
+</body>
+</html>

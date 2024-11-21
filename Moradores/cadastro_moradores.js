@@ -4,9 +4,14 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
     const nome = document.getElementById('nome').value.trim();
     const email = document.getElementById('email').value.trim();
     const telefone = document.getElementById('telefone').value.trim();
-    const cpf = document.getElementById('cpf').value.trim();
+    let cpf = document.getElementById('cpf').value.trim();
     const dataNascimento = document.getElementById('dataNascimento').value.trim();
+    const numeroApartamento = document.getElementById('numeroApartamento').value.trim();
     const senha = document.getElementById('senha').value.trim();
+
+
+    // Remove a máscara do CPF
+    cpf = removeMascaraCPF(cpf);
 
     // Validações
     if (!nome || !validateNome(nome)) {
@@ -25,12 +30,17 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
     }
 
     if (!cpf || !validateCPF(cpf)) {
-        alert('CPF inválido.');
+        alert('CPF inválido. Deve conter 11 dígitos.');
         return;
     }
 
     if (!dataNascimento) {
         alert('Data de nascimento é obrigatória.');
+        return;
+    }
+
+    if (!numeroApartamento) {
+        alert('O Numero é obrigatório.');
         return;
     }
 
@@ -45,6 +55,7 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
         telefone: telefone,
         cpf: cpf,
         data_nascimento: dataNascimento,
+        numero_apartamento: numeroApartamento,
         senha: senha
     };
 
@@ -55,7 +66,7 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(novoMorador),
-        });
+        }); 
 
         if (!response.ok) {
             throw new Error(`Erro HTTP! Status: ${response.status}`);

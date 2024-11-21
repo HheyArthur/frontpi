@@ -1,11 +1,16 @@
 const recursosContainer = document.getElementById('recursosContainer');
 const addRecursoButton = document.getElementById('addRecursoButton');
-const apiUrl = 'http://127.0.0.1:8000'; // Substitua 'Apiaqui' pela URL da sua API
+const apiUrl = 'http://127.0.0.1:8000'; 
 
 // Redireciona para a tela de cadastro de áreas comuns
 addRecursoButton.addEventListener('click', () => {
     window.location.href = 'areas_comuns.html';
 });
+
+addReservasAgendadas.addEventListener('click', () => {
+    window.location.href = 'reservasAgendadas.html';
+});
+
 
 // Busca recursos
 async function buscarRecursos() {
@@ -35,7 +40,6 @@ function createRecursoCard(recurso) {
 
     card.innerHTML = `
         <h3>${recurso.nome_area}</h3>
-        <img src="${imageUrl}" alt="${recurso.nome_area}">
         <p>Horário: ${recurso.horario_funcionamento}</p>
         <p>Disponível: ${recurso.disponivel ? 'Sim' : 'Não'}</p>
         <p>${recurso.reservado_por ? `Reservado por: ${recurso.reservado_por}` : ''}</p>
